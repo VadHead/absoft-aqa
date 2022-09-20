@@ -1,0 +1,879 @@
+Microsoft Windows [Version 10.0.19044.1889]
+(c) Корпорація Майкрософт. Усі права захищені.
+
+C:\Users\vadim.alekseyev>git --version
+git version 2.37.3.windows.1
+
+C:\Users\vadim.alekseyev>git config --global user.name "Vadym Alieksieiev"
+
+C:\Users\vadim.alekseyev>git config --global user.email vadym.alekseyev@ab-soft.net
+
+C:\Users\vadim.alekseyev\git-temp>type NUL > README.md
+
+C:\Users\vadim.alekseyev\git-temp>git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+C:\Users\vadim.alekseyev\git-temp>git add README.md
+
+C:\Users\vadim.alekseyev\git-temp>git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   README.md
+
+
+C:\Users\vadim.alekseyev\git-temp>git commit
+[master (root-commit) be7ee77]  On branch master
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 README.md
+
+C:\Users\vadim.alekseyev\git-temp>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\vadim.alekseyev\git-temp>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\vadim.alekseyev\git-temp>git diff
+diff --git a/README.md b/README.md
+index e69de29..07bc433 100644
+--- a/README.md
++++ b/README.md
+@@ -0,0 +1 @@
++# Git Repo
+\ No newline at end of file
+
+C:\Users\vadim.alekseyev\git-temp>git commit -a -m "New line added to README.md"
+[master 8e68cf8] New line added to README.md
+ 1 file changed, 1 insertion(+)
+
+C:\Users\vadim.alekseyev\git-temp>git log
+commit 8e68cf8ca033056c5f6f9a584416b993e8191169 (HEAD -> master)
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 15:14:55 2022 +0300
+
+    New line added to README.md
+
+commit be7ee77658ca71fe892b5bbd34cde3c3bc1b1a06
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 15:04:51 2022 +0300
+
+     On branch master
+
+     Initial commit
+
+     Changes to be committed:
+            new file:   README.md
+
+C:\Users\vadim.alekseyev\git-temp>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\vadim.alekseyev\git-temp>git add README.md
+
+C:\Users\vadim.alekseyev\git-temp>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+
+C:\Users\vadim.alekseyev\git-temp>git commit --amend
+[master 407f814] New line added to README.md
+ Date: Mon Sep 19 15:14:55 2022 +0300
+ 1 file changed, 3 insertions(+)
+
+C:\Users\vadim.alekseyev\git-temp>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\vadim.alekseyev\git-temp>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\vadim.alekseyev\git-temp>git restore README.md
+
+C:\Users\vadim.alekseyev\git-temp>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\vadim.alekseyev\git-temp>git add README.md
+
+C:\Users\vadim.alekseyev\git-temp>git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   README.md
+
+
+C:\Users\vadim.alekseyev\git-temp>git restore --staged README.md
+
+C:\Users\vadim.alekseyev\git-temp>git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\vadim.alekseyev\git-temp>git restore README.md
+
+C:\Users\vadim.alekseyev\git-temp>git log
+commit 407f814db7f884f800aa54e197e322ec539dd9bf (HEAD -> master)
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 15:14:55 2022 +0300
+
+    New line added to README.md
+
+     Date:      Mon Sep 19 15:14:55 2022 +0300
+
+     On branch master
+     Changes to be committed:
+            modified:   README.md
+
+commit be7ee77658ca71fe892b5bbd34cde3c3bc1b1a06
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 15:04:51 2022 +0300
+
+     On branch master
+
+     Initial commit
+
+     Changes to be committed:
+            new file:   README.md
+
+C:\Users\vadim.alekseyev\git-temp>git branch iss53
+
+C:\Users\vadim.alekseyev\git-temp>git status
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\vadim.alekseyev\git-temp>git branch
+  iss53
+* master
+
+C:\Users\vadim.alekseyev\git-temp>get checkout iss53
+'get' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\vadim.alekseyev\git-temp>git checkout iss53
+Switched to branch 'iss53'
+
+C:\Users\vadim.alekseyev\git-temp>git log
+commit 407f814db7f884f800aa54e197e322ec539dd9bf (HEAD -> iss53, master)
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 15:14:55 2022 +0300
+
+    New line added to README.md
+
+     Date:      Mon Sep 19 15:14:55 2022 +0300
+
+     On branch master
+     Changes to be committed:
+            modified:   README.md
+
+commit be7ee77658ca71fe892b5bbd34cde3c3bc1b1a06
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 15:04:51 2022 +0300
+
+     On branch master
+
+     Initial commit
+
+     Changes to be committed:
+            new file:   README.md
+
+C:\Users\vadim.alekseyev\git-temp>type NUL > LICENCE.md
+
+C:\Users\vadim.alekseyev\git-temp>git status
+On branch iss53
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        LICENCE.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\vadim.alekseyev\git-temp>git add LICENCE.md
+
+C:\Users\vadim.alekseyev\git-temp>git commint -m "LICENCE.md added"
+git: 'commint' is not a git command. See 'git --help'.
+
+The most similar command is
+        commit
+
+C:\Users\vadim.alekseyev\git-temp>git commit -m "LICENCE.md added"
+[iss53 20be4c5] LICENCE.md added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 LICENCE.md
+
+C:\Users\vadim.alekseyev\git-temp>git status
+On branch iss53
+nothing to commit, working tree clean
+
+C:\Users\vadim.alekseyev\git-temp>git log
+commit 20be4c5ae0d380abae76160f116ae19bc888faec (HEAD -> iss53)
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 17:14:29 2022 +0300
+
+    LICENCE.md added
+
+commit 407f814db7f884f800aa54e197e322ec539dd9bf (master)
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 15:14:55 2022 +0300
+
+    New line added to README.md
+
+     Date:      Mon Sep 19 15:14:55 2022 +0300
+
+     On branch master
+     Changes to be committed:
+            modified:   README.md
+
+commit be7ee77658ca71fe892b5bbd34cde3c3bc1b1a06
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 15:04:51 2022 +0300
+
+     On branch master
+
+     Initial commit
+
+     Changes to be committed:
+            new file:   README.md
+
+C:\Users\vadim.alekseyev\git-temp>git checkout master
+Switched to branch 'master'
+
+C:\Users\vadim.alekseyev\git-temp>dir
+ Volume in drive C has no label.
+ Volume Serial Number is AAA7-0F35
+
+ Directory of C:\Users\vadim.alekseyev\git-temp
+
+19.09.2022  17:16    <DIR>          .
+19.09.2022  17:16    <DIR>          ..
+19.09.2022  16:30                29 README.md
+               1 File(s)             29 bytes
+               2 Dir(s)  137 009 655 808 bytes free
+
+C:\Users\vadim.alekseyev\git-temp>git checkout iss53
+Switched to branch 'iss53'
+
+C:\Users\vadim.alekseyev\git-temp>dir
+ Volume in drive C has no label.
+ Volume Serial Number is AAA7-0F35
+
+ Directory of C:\Users\vadim.alekseyev\git-temp
+
+19.09.2022  17:16    <DIR>          .
+19.09.2022  17:16    <DIR>          ..
+19.09.2022  17:16                 0 LICENCE.md
+19.09.2022  16:30                29 README.md
+               2 File(s)             29 bytes
+               2 Dir(s)  137 009 590 272 bytes free
+
+C:\Users\vadim.alekseyev\git-temp>git checkout master
+Switched to branch 'master'
+
+C:\Users\vadim.alekseyev\git-temp>git checkout -b hotfix
+Switched to a new branch 'hotfix'
+
+C:\Users\vadim.alekseyev\git-temp>git branch
+* hotfix
+  iss53
+  master
+
+C:\Users\vadim.alekseyev\git-temp>git log
+commit 407f814db7f884f800aa54e197e322ec539dd9bf (HEAD -> hotfix, master)
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 15:14:55 2022 +0300
+
+    New line added to README.md
+
+     Date:      Mon Sep 19 15:14:55 2022 +0300
+
+     On branch master
+     Changes to be committed:
+            modified:   README.md
+
+commit be7ee77658ca71fe892b5bbd34cde3c3bc1b1a06
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 15:04:51 2022 +0300
+
+     On branch master
+
+     Initial commit
+
+     Changes to be committed:
+            new file:   README.md
+
+C:\Users\vadim.alekseyev\git-temp>git status
+On branch hotfix
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\vadim.alekseyev\git-temp>git add README.md
+
+C:\Users\vadim.alekseyev\git-temp>git commit -m "Hotfix"
+[hotfix edd1381] Hotfix
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+C:\Users\vadim.alekseyev\git-temp>git status
+On branch hotfix
+nothing to commit, working tree clean
+
+C:\Users\vadim.alekseyev\git-temp>git log
+commit edd13814e200a26d7b62e83b3641e15f391b7d87 (HEAD -> hotfix)
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 17:18:40 2022 +0300
+
+    Hotfix
+
+commit 407f814db7f884f800aa54e197e322ec539dd9bf (master)
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 15:14:55 2022 +0300
+
+    New line added to README.md
+
+     Date:      Mon Sep 19 15:14:55 2022 +0300
+
+     On branch master
+     Changes to be committed:
+            modified:   README.md
+
+commit be7ee77658ca71fe892b5bbd34cde3c3bc1b1a06
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 15:04:51 2022 +0300
+
+     On branch master
+
+     Initial commit
+
+     Changes to be committed:
+            new file:   README.md
+
+C:\Users\vadim.alekseyev\git-temp>gir checkout master
+'gir' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\vadim.alekseyev\git-temp>git checkout master
+Switched to branch 'master'
+
+C:\Users\vadim.alekseyev\git-temp>git merge hotfix
+Updating 407f814..edd1381
+Fast-forward
+ README.md | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+C:\Users\vadim.alekseyev\git-temp>git log
+commit edd13814e200a26d7b62e83b3641e15f391b7d87 (HEAD -> master, hotfix)
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 17:18:40 2022 +0300
+
+    Hotfix
+
+commit 407f814db7f884f800aa54e197e322ec539dd9bf
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 15:14:55 2022 +0300
+
+    New line added to README.md
+
+     Date:      Mon Sep 19 15:14:55 2022 +0300
+
+     On branch master
+     Changes to be committed:
+            modified:   README.md
+
+commit be7ee77658ca71fe892b5bbd34cde3c3bc1b1a06
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 15:04:51 2022 +0300
+
+     On branch master
+
+     Initial commit
+
+     Changes to be committed:
+            new file:   README.md
+
+C:\Users\vadim.alekseyev\git-temp>git branch -d hotfix
+Deleted branch hotfix (was edd1381).
+
+C:\Users\vadim.alekseyev\git-temp>git branch
+  iss53
+* master
+
+C:\Users\vadim.alekseyev\git-temp>git checkout iss53
+Switched to branch 'iss53'
+
+C:\Users\vadim.alekseyev\git-temp>typo "LICENSE0" > LICENCE.md
+'typo' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\vadim.alekseyev\git-temp>echo "LICENSE" > LICENCE.md
+
+C:\Users\vadim.alekseyev\git-temp>git status
+On branch iss53
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   LICENCE.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\vadim.alekseyev\git-temp>git commit -a -m "Changed LICENCE.md"
+[iss53 8d9cb63] Changed LICENCE.md
+ 1 file changed, 1 insertion(+)
+
+C:\Users\vadim.alekseyev\git-temp>git status
+On branch iss53
+nothing to commit, working tree clean
+
+C:\Users\vadim.alekseyev\git-temp>git log
+commit 8d9cb6362b47f2fc603c7f2f199d4b351bc89b41 (HEAD -> iss53)
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 17:24:24 2022 +0300
+
+    Changed LICENCE.md
+
+commit 20be4c5ae0d380abae76160f116ae19bc888faec
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 17:14:29 2022 +0300
+
+    LICENCE.md added
+
+commit 407f814db7f884f800aa54e197e322ec539dd9bf
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 15:14:55 2022 +0300
+
+    New line added to README.md
+
+     Date:      Mon Sep 19 15:14:55 2022 +0300
+
+     On branch master
+     Changes to be committed:
+            modified:   README.md
+
+commit be7ee77658ca71fe892b5bbd34cde3c3bc1b1a06
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 15:04:51 2022 +0300
+
+     On branch master
+
+     Initial commit
+
+     Changes to be committed:
+            new file:   README.md
+
+C:\Users\vadim.alekseyev\git-temp>checkout master
+'checkout' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\vadim.alekseyev\git-temp>git merge iss53
+Already up to date.
+
+C:\Users\vadim.alekseyev\git-temp>git status
+On branch iss53
+nothing to commit, working tree clean
+
+C:\Users\vadim.alekseyev\git-temp>git log
+commit 8d9cb6362b47f2fc603c7f2f199d4b351bc89b41 (HEAD -> iss53)
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 17:24:24 2022 +0300
+
+    Changed LICENCE.md
+
+commit 20be4c5ae0d380abae76160f116ae19bc888faec
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 17:14:29 2022 +0300
+
+    LICENCE.md added
+
+commit 407f814db7f884f800aa54e197e322ec539dd9bf
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 15:14:55 2022 +0300
+
+    New line added to README.md
+
+     Date:      Mon Sep 19 15:14:55 2022 +0300
+
+     On branch master
+     Changes to be committed:
+            modified:   README.md
+
+commit be7ee77658ca71fe892b5bbd34cde3c3bc1b1a06
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 15:04:51 2022 +0300
+
+     On branch master
+
+     Initial commit
+
+     Changes to be committed:
+            new file:   README.md
+
+C:\Users\vadim.alekseyev\git-temp>git checkout master
+Switched to branch 'master'
+
+C:\Users\vadim.alekseyev\git-temp>git merge iss53
+Merge made by the 'ort' strategy.
+ LICENCE.md | 1 +
+ 1 file changed, 1 insertion(+)
+ create mode 100644 LICENCE.md
+
+C:\Users\vadim.alekseyev\git-temp>git log
+commit 7352d028daf76ce3df144e29d546b8157587282d (HEAD -> master)
+commit 7352d028daf76ce3df144e29d546b8157587282d (HEAD -> master)
+commit 7352d028daf76ce3df144e29d546b8157587282d (HEAD -> master)
+Merge: edd1381 8d9cb63
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 17:27:51 2022 +0300
+
+    Merge branch 'iss53'
+
+commit 8d9cb6362b47f2fc603c7f2f199d4b351bc89b41 (iss53)
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 17:24:24 2022 +0300
+
+    Changed LICENCE.md
+
+commit edd13814e200a26d7b62e83b3641e15f391b7d87
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 17:18:40 2022 +0300
+
+    Hotfix
+
+commit 20be4c5ae0d380abae76160f116ae19bc888faec
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 17:14:29 2022 +0300
+
+    LICENCE.md added
+
+commit 407f814db7f884f800aa54e197e322ec539dd9bf
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 15:14:55 2022 +0300
+
+    New line added to README.md
+
+     Date:      Mon Sep 19 15:14:55 2022 +0300
+
+     On branch master
+     Changes to be committed:
+            modified:   README.md
+
+commit be7ee77658ca71fe892b5bbd34cde3c3bc1b1a06
+Author: Vadym Alieksieiev <vadym.alekseyev@ab-soft.net>
+Date:   Mon Sep 19 15:04:51 2022 +0300
+
+     On branch master
+
+     Initial commit
+
+     Changes to be committed:
+            new file:   README.md
+
+C:\Users\vadim.alekseyev\git-temp>git branch -d iss53
+Deleted branch iss53 (was 8d9cb63).
+
+C:\Users\vadim.alekseyev\git-temp>git branch
+* master
+
+C:\Users\vadim.alekseyev\git-temp>git checkout -b iss55
+Switched to a new branch 'iss55'
+
+C:\Users\vadim.alekseyev\git-temp>git branch
+* iss55
+  master
+
+C:\Users\vadim.alekseyev\git-temp>dir
+ Volume in drive C has no label.
+ Volume Serial Number is AAA7-0F35
+
+ Directory of C:\Users\vadim.alekseyev\git-temp
+
+19.09.2022  17:27    <DIR>          .
+19.09.2022  17:27    <DIR>          ..
+19.09.2022  17:27                12 LICENCE.md
+19.09.2022  17:27                42 README.md
+               2 File(s)             54 bytes
+               2 Dir(s)  137 002 274 816 bytes free
+
+C:\Users\vadim.alekseyev\git-temp>ls
+'ls' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\vadim.alekseyev\git-temp>cat
+'cat' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\vadim.alekseyev\git-temp>echo "iss55" > LICENCE.md
+
+C:\Users\vadim.alekseyev\git-temp>cat LICENCE.md
+'cat' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\vadim.alekseyev\git-temp>git status
+On branch iss55
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   LICENCE.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\vadim.alekseyev\git-temp>git commit -a -m "iss55 updates"
+[iss55 11d1ed1] iss55 updates
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\vadim.alekseyev\git-temp>git checkout master
+Switched to branch 'master'
+
+C:\Users\vadim.alekseyev\git-temp>echo "Master!"> LICENCE.md
+
+C:\Users\vadim.alekseyev\git-temp>git commit -a -m "master updates"
+[master ec98acc] master updates
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+C:\Users\vadim.alekseyev\git-temp>git merge iss55
+Auto-merging LICENCE.md
+CONFLICT (content): Merge conflict in LICENCE.md
+Automatic merge failed; fix conflicts and then commit the result.
+
+C:\Users\vadim.alekseyev\git-temp>git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   LICENCE.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\vadim.alekseyev\git-temp>more LICENCE.md
+<<<<<<< HEAD
+"Master!"
+=======
+"iss55"
+>>>>>>> iss55
+
+C:\Users\vadim.alekseyev\git-temp>git status
+On branch master
+You have unmerged paths.
+  (fix conflicts and run "git commit")
+  (use "git merge --abort" to abort the merge)
+
+Unmerged paths:
+  (use "git add <file>..." to mark resolution)
+        both modified:   LICENCE.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\vadim.alekseyev\git-temp>git branch
+  iss55
+* master
+C:\Users\vadim.alekseyev\git-temp>git commit -m "Final commit"
+On branch master
+nothing to commit, working tree clean
+
+C:\Users\vadim.alekseyev\git-temp>git remote add origin https://github.com/VadHead/absoft-aqa.git
+
+C:\Users\vadim.alekseyev\git-temp>git remote -v
+origin  https://github.com/VadHead/absoft-aqa.git (fetch)
+origin  https://github.com/VadHead/absoft-aqa.git (push)
+
+C:\Users\vadim.alekseyev\git-temp>git branch -M main
+
+C:\Users\vadim.alekseyev\git-temp>git push -u origin main
+info: please complete authentication in your browser...
+Enumerating objects: 25, done.
+Counting objects: 100% (25/25), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (15/15), done.
+Writing objects: 100% (25/25), 2.32 KiB | 475.00 KiB/s, done.
+Total 25 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/VadHead/absoft-aqa.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+
+C:\Users\vadim.alekseyev\git-temp>cd ..
+
+C:\Users\vadim.alekseyev>mkdir git-aqa-repo
+
+C:\Users\vadim.alekseyev>cd git-aqa-repo
+
+C:\Users\vadim.alekseyev\git-aqa-repo>https://github.com/VadHead/absoft-aqa.git
+'https:' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\vadim.alekseyev\git-aqa-repo>git clone https://github.com/VadHead/absoft-aqa.git
+Cloning into 'absoft-aqa'...
+remote: Enumerating objects: 25, done.
+remote: Counting objects: 100% (25/25), done.
+remote: Compressing objects: 100% (13/13), done.
+remote: Total 25 (delta 2), reused 25 (delta 2), pack-reused 0
+Receiving objects: 100% (25/25), done.
+Resolving deltas: 100% (2/2), done.
+
+C:\Users\vadim.alekseyev\git-aqa-repo>dir
+ Volume in drive C has no label.
+ Volume Serial Number is AAA7-0F35
+
+ Directory of C:\Users\vadim.alekseyev\git-aqa-repo
+
+20.09.2022  14:05    <DIR>          .
+20.09.2022  14:05    <DIR>          ..
+20.09.2022  14:05    <DIR>          absoft-aqa
+               0 File(s)              0 bytes
+               3 Dir(s)  135 113 277 440 bytes free
+
+C:\Users\vadim.alekseyev\git-aqa-repo>dir
+ Volume in drive C has no label.
+ Volume Serial Number is AAA7-0F35
+
+ Directory of C:\Users\vadim.alekseyev\git-aqa-repo
+
+20.09.2022  14:05    <DIR>          .
+20.09.2022  14:05    <DIR>          ..
+20.09.2022  14:05    <DIR>          absoft-aqa
+               0 File(s)              0 bytes
+               3 Dir(s)  135 104 294 912 bytes free
+
+C:\Users\vadim.alekseyev\git-aqa-repo>git remote
+fatal: not a git repository (or any of the parent directories): .git
+
+C:\Users\vadim.alekseyev\git-aqa-repo>git remote -v
+fatal: not a git repository (or any of the parent directories): .git
+
+C:\Users\vadim.alekseyev\git-aqa-repo>cd ..
+
+C:\Users\vadim.alekseyev>cd git-tempo
+The system cannot find the path specified.
+
+C:\Users\vadim.alekseyev>git remote -v
+fatal: not a git repository (or any of the parent directories): .git
+
+C:\Users\vadim.alekseyev>cd git-temp                                                                                                                    C:\Users\vadim.alekseyev\git-temp>git remote -v                             origin  https://github.com/VadHead/absoft-aqa.git (fetch)                   origin  https://github.com/VadHead/absoft-aqa.git (push)                                                                                                C:\Users\vadim.alekseyev\git-temp>cd ..                                                                                                                 C:\Users\vadim.alekseyev>cd git-aqa-repo                                                                                                                C:\Users\vadim.alekseyev\git-aqa-repo>git remote                            fatal: not a git repository (or any of the parent directories): .git                                                                                    C:\Users\vadim.alekseyev\git-aqa-repo>git remote show origin                fatal: not a git repository (or any of the parent directories): .git                                                                                    C:\Users\vadim.alekseyev\git-aqa-repo>dir                                    Volume in drive C has no label.                                             Volume Serial Number is AAA7-0F35                                                                                                                       Directory of C:\Users\vadim.alekseyev\git-aqa-repo                                                                                                     20.09.2022  14:05    <DIR>          .                                       20.09.2022  14:05    <DIR>          ..                                      20.09.2022  14:05    <DIR>          absoft-aqa                                             0 File(s)              0 bytes                                              3 Dir(s)  135 112 187 904 bytes free                                                                                                     C:\Users\vadim.alekseyev\git-aqa-repo>cd absoft-aqa                                                                                                     C:\Users\vadim.alekseyev\git-aqa-repo\absoft-aqa>git remote                 origin                                                                                                                                                  C:\Users\vadim.alekseyev\git-aqa-repo\absoft-aqa>git remote -v              origin  https://github.com/VadHead/absoft-aqa.git (fetch)                   origin  https://github.com/VadHead/absoft-aqa.git (push)                                                                                                C:\Users\vadim.alekseyev\git-aqa-repo\absoft-aqa>vim README.md              
+C:\Users\vadim.alekseyev\git-aqa-repo\absoft-aqa>gir status
+'gir' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\vadim.alekseyev\git-aqa-repo\absoft-aqa>git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   README.md
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .README.md.un~
+        README.md~
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+C:\Users\vadim.alekseyev\git-aqa-repo\absoft-aqa>git commit -a -m "README.md update"
+[main eac465b] README.md update
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+C:\Users\vadim.alekseyev\git-aqa-repo\absoft-aqa>git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 352 bytes | 352.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/VadHead/absoft-aqa.git
+   f382200..eac465b  main -> main
+
+C:\Users\vadim.alekseyev\git-aqa-repo\absoft-aqa>сd ..
+'сd' is not recognized as an internal or external command,
+operable program or batch file.
+
+C:\Users\vadim.alekseyev\git-aqa-repo\absoft-aqa>cd ..
+
+C:\Users\vadim.alekseyev\git-aqa-repo>cd ..
+
+C:\Users\vadim.alekseyev\git-temp>git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ..gitignore.un~
+        .gitignore
+        .gitignore~
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\vadim.alekseyev\git-temp>git commit .gitignore
+error: pathspec '.gitignore' did not match any file(s) known to git
+
+C:\Users\vadim.alekseyev\git-temp>git commit -a -m "Adding .gitignore with content from https://github.com/github/gitignore/blob/main/Global/Windows.gitignore"
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        ..gitignore.un~
+        .gitignore
+        .gitignore~
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+C:\Users\vadim.alekseyev\git-temp>git add .gitignore
+
+C:\Users\vadim.alekseyev\git-temp>git commit -a -m "Adding .gitignore with content from https://github.com/github/gitignore/blob/main/Global/Windows.gitignore"
+[main ed88697] Adding .gitignore with content from https://github.com/github/gitignore/blob/main/Global/Windows.gitignore
+ 1 file changed, 24 insertions(+)
+ create mode 100644 .gitignore
+
+C:\Users\vadim.alekseyev\git-temp>git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 575 bytes | 575.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/VadHead/absoft-aqa.git
+   eac465b..ed88697  main -> main
+
+C:\Users\vadim.alekseyev\git-temp>git commit -a -m "Adding .gitignore with content from https://github.com/github/gitignore/blob/main/Global/Windows.gitignore"
